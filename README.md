@@ -295,26 +295,6 @@ Wraps any Python script into a standalone Windows executable using PyInstaller.
 - Progress shown inline while building
 - Opens `dist/` folder in Explorer when done
 
-### GUI Installer (`installer.py`)
-
-A separate **PyQt6 GUI** for building Pyro itself (or any script) into an EXE with full control:
-
-```bash
-python installer.py
-```
-
-**GUI features:**
-- Browse for `pyro.py`, `tools.py`, icon, and extra data files
-- Set output directory, app name, and PyInstaller flags
-- Configure hidden imports (pre-filled with all Pyro dependencies)
-- Auto-detect all Python installations and select one
-- Install build dependencies in one click
-- Live streaming build log
-- Stage-accurate progress bar (no more stuck at 85%)
-- Stall detector — warns if PyInstaller produces no output for 60 seconds; kills at 5 minutes
-- Cancel button that cleanly terminates the build process
-
----
 
 ## 🔧 Script Tools
 
@@ -371,32 +351,8 @@ Chat with AI models while you code — the AI can read and write files in your p
 
 Each session starts with a **provider picker** so you can switch without going to settings.
 
-### AI File Tools (`tools.py`)
 
-When `tools.py` is present, the AI can use 18 tools to interact with your project:
 
-| Tool | What it does |
-|------|-------------|
-| `list_directory` | List files and folders |
-| `read_file` | Read any text file |
-| `write_file` | Create or overwrite a file |
-| `edit_file` | Find-and-replace in a file |
-| `append_to_file` | Append text to a file |
-| `delete_file` | Delete a file |
-| `create_directory` | Create a directory tree |
-| `delete_directory` | Delete a directory recursively |
-| `move_item` | Move or rename a file |
-| `copy_item` | Copy a file or directory |
-| `search_in_files` | Regex search across `.py` files |
-| `run_python_snippet` | Execute a Python snippet (max 100 lines) |
-| `get_project_info` | Read `config.pypip` |
-| `check_python_imports` | AST-parse imports in a file |
-| `get_file_info` | File size, dates, line count |
-| `find_files` | Glob search across directories |
-| `list_python_packages` | List installed pip packages |
-| `create_python_scripts` | **Create one or more `.py` files from structured JSON** |
-
-The `create_python_scripts` tool is the key one — when you ask the AI to "write a script", it saves the files directly to disk instead of just printing code to the terminal.
 
 ### Session Commands
 
@@ -608,15 +564,11 @@ When enabled (default: on), Pyro checks GitHub releases on startup. If a newer v
 This ensures users always run the latest version and you can push mandatory updates.
 
 ### Self-Updater
-
-- Checks the GitHub Releases API for the latest tag
-- If a newer version exists, downloads the `.exe` asset
-- Copies it to `%LOCALAPPDATA%\Programs\Pyro\` and to the folder where Pyro is installed
-- Reports the path and instructs you to restart
+-AUTO UPDATE
 
 ### Add to PATH
 
-Adds Pyro's directory to the Windows user `PATH` via the registry (`HKEY_CURRENT_USER\Environment`). Also creates a `pyro.bat` launcher if running from source. Change is broadcast to running terminals via `WM_SETTINGCHANGE`.
+Adds Pyro's directory to the Windows user `PATH` via the registry (`HKEY_CURRENT_USER\Environment`). 
 
 ---
 
@@ -693,18 +645,7 @@ Table of packages with available upgrades (populated by the background checker).
 Bar chart comparing up-to-date vs outdated packages with a percentage summary.
 
 ---
-
-## 🏗 Project Structure
-
-```
-Pyro/
-├── pyro.py          # Main tool — run this
-├── tools.py         # AI assistant file tools (must be in same folder)
-├── installer.py     # PyQt6 GUI for building Pyro.exe
-├── pyro_settings.json   # Auto-created on first run
-└── README.md
-```
-
+==================================================================================================================================================================
 ---
 
 ## ⚙ Requirements
@@ -712,16 +653,7 @@ Pyro/
 ### Runtime (EXE)
 No requirements — the EXE is self-contained.
 
-### Runtime (from source)
 
-```
-Python 3.10+
-rich
-requests
-psutil
-msvcrt        # built-in on Windows
-winreg        # built-in on Windows
-```
 
 Auto-installed on first run if missing.
 
@@ -731,14 +663,6 @@ Auto-installed on first run if missing.
 # LM Studio or Ollama running locally  OR
 google-generativeai   # auto-installed when Gemini is selected
 ```
-
-### For the GUI installer
-
-```
-PyQt6
-pyinstaller
-```
-
 ---
 
 ## 🔒 Security & Privacy

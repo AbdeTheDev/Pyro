@@ -76,17 +76,8 @@ Pyro.exe
 ```
 
 ### Option B — Run from source
-
-```bash
-# Clone the repo
-git clone https://github.com/AbdeTheDev/Pyro.git
-cd Pyro
-
-# Install required packages
-pip install rich requests psutil
-
-# Run
-python pyro.py
+```
+#Download the installer then follow it
 ```
 
 > `tools.py` must be in the same folder as `pyro.py` for the AI assistant's file tools to work.

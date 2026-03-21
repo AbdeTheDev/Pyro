@@ -4,8 +4,8 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%2011-blue?style=for-the-badge)](./)
 [![Python](https://img.shields.io/badge/python-3.10+-brightgreen?style=for-the-badge)](./)
 [![License](https://img.shields.io/badge/license-Proprietary-red?style=for-the-badge)](./)
-[![Stars](https://img.shields.io/github/stars/USER/Pyro?style=for-the-badge)](https://github.com/USER/Pyro/stargazers)
-[![Issues](https://img.shields.io/github/issues/USER/Pyro?style=for-the-badge)](https://github.com/USER/Pyro/issues)
+[![Stars](https://img.shields.io/github/stars/AbdeTheDev/Pyro?style=for-the-badge)](https://github.com/USER/Pyro/stargazers)
+[![Issues](https://img.shields.io/github/issues/AbdeTheDev/Pyro?style=for-the-badge)](https://github.com/USER/Pyro/issues)
 
 Pyro is a blazing‑fast 🔥 terminal toolkit that supercharges Python development from one sleek CLI.  
 It manages packages, virtual envs, projects, builds, EXE bundles, and AI‑powered workflows in seconds—no more juggling dozens of tools. 🚀

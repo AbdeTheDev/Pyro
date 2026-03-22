@@ -132,6 +132,11 @@ After a terminal restart you can launch it from anywhere:
 pyro
 ```
 
+### Tutorial :
+
+![Demo](https://github.com/AbdeTheDev/Pyro/blob/main/tutorial1.mp4)
+
+
 You can also run any Python script directly:
 
 ```cmd

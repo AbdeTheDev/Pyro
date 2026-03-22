@@ -134,7 +134,8 @@ pyro
 
 ### Tutorial :
 
-![Demo](https://github.com/AbdeTheDev/Pyro/blob/main/tutorial1.mp4)
+[![Watch Tutorial](https://raw.githubusercontent.com/AbdeTheDev/Pyro/main/thumbnail.png)](https://raw.githubusercontent.com/AbdeTheDev/Pyro/main/tutorial1.mp4)
+
 
 
 You can also run any Python script directly:

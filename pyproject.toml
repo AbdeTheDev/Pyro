@@ -1,0 +1,6 @@
+[project]
+name = "pyro-toolkit"
+version = "1.0.0"
+description = "Blazing-fast Python dev toolkit 🔥"
+authors = [{name = "AbdeTheDev"}]
+requires-python = ">=3.8"

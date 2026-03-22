@@ -671,6 +671,188 @@ google-generativeai   # auto-installed when Gemini is selected
 ```
 ---
 
+
+
+## UPDATES NOTE 
+<details>
+  <summary>V 1.1.0 ALPHA FIX1</summary>
+
+# 🔥 Pyro v1.1.0 — Alpha fix1
+
+> The Ultimate Python Developer Toolkit
+
+---
+
+## What's New in This Release
+
+This update brings four major new features alongside a set of fixes and quality-of-life improvements across the whole tool.
+
+---
+
+### 🌿 Active Virtual Environment
+
+You can now **activate a virtual environment inside Pyro** so every tool uses it automatically — no more switching terminals.
+
+**How to use it:**
+
+1. Open **Virtual Environments** from the main menu
+2. Select your venv
+3. Choose **⚡ Use in Pyro**
+
+That's it. From that point, the Package Manager, Script Runner, Import Fixer, Dependency Store, and every other tool will use your venv automatically. A `🌿 Venv: name` badge appears at the top of every screen so you always know which environment is active.
+
+To switch back, open the venv again and choose **Deactivate**.
+
+---
+
+### ⚡ Active Project
+
+You can now **activate a project** so Pyro always works in that project's context — no more navigating folders every time you switch tools.
+
+**How to use it:**
+
+1. Open **Project Builder & Manager**
+2. Open your project
+3. Choose **⚡ Activate Project**
+
+Pyro will switch to the project folder and automatically activate the project's virtual environment if one is configured. The project name appears in the banner on every screen.
+
+---
+
+### 🔌 Pyro API — Connect Your Scripts to Pyro
+
+Pyro now includes a **developer integration system** that lets your running Python scripts send data to Pyro in real time — logs, errors, performance metrics, dependency information, and more.
+
+#### Quick Start
+
+**1. Start the server** — the Pyro API server starts automatically when you launch Pyro. You can also manage it from **Main Menu → Pyro API → Start Server**.
+
+**2. Get the SDK** — go to **Pyro API → Copy SDK to project…** and select your project folder. Pyro will place a `pyro_api.py` file there.
+
+**3. Add two lines to your script:**
+
+```python
+import pyro_api as pyro
+
+pyro.connect("my_app")
+```
+
+That's all the setup you need. Your script is now connected to Pyro.
+
+#### Sending Data
+
+```python
+# Logs
+pyro.log("Server started")
+pyro.warn("Disk space low")
+pyro.error("Connection failed", exc)
+
+# Performance metrics
+pyro.metric("requests_per_second", 342)
+
+# Measure a block of code
+with pyro.Timer("database_query"):
+    result = db.execute(sql)
+
+# Custom events
+pyro.event("user_login", {"user_id": 42})
+
+# Report what packages are installed
+pyro.report_requirements()
+
+# Attach to Python's built-in logging
+pyro.attach_logging()
+```
+
+Uncaught exceptions are **captured and sent to Pyro automatically** — no extra code needed.
+
+If Pyro is not running when your script sends data, the events are **saved locally and sent the next time** the server is available.
+
+#### The Dashboard
+
+Open **Pyro API** from the main menu to see everything your scripts are sending:
+
+- **Live Event Log** — all events arriving in real time, auto-refreshes every 2 seconds
+- **Sessions** — all connected scripts with connection status and error count
+- **Errors & Tracebacks** — browse every error your scripts throw, with full traceback
+- **Metrics** — performance values charted visually
+- **Dependency Reports** — packages installed in each connected script's environment
+
+You can also send any error directly to your AI assistant for analysis with one keypress.
+
+---
+
+### 🛡 Pyro Guard — Script Behaviour Monitor
+
+Pyro Guard watches a Python script while it runs and shows you **exactly what it is doing** — what files it opens, what network connections it makes, how much memory it uses, and whether it shows any suspicious behaviour.
+
+#### Start Pyro Guard
+
+- **Main Menu → Pyro Guard** — select a script, Pyro Guard launches and monitors it
+- After running a script in a new window: choose **Open Pyro Guard** from the options
+
+#### What it monitors
+
+| Category | Details |
+|----------|---------|
+| **Memory** | Live RAM usage with peak tracking |
+| **CPU** | Processor usage percentage |
+| **File access** | Every file your script opens |
+| **Network** | Every outbound connection your script makes |
+| **Security scan** | Automatic check for suspicious patterns in the source code |
+
+Pyro Guard shows a live threat indicator:
+
+| Level | Meaning |
+|-------|---------|
+| `✅ CLEAN` | Nothing suspicious found |
+| `⚠ LOW RISK` | Minor indicators worth reviewing |
+| `🔴 MEDIUM RISK` | Several indicators found |
+| `💀 HIGH RISK` | Multiple serious indicators |
+
+Press **Q** to stop monitoring or **K** to immediately stop the script. A summary report is shown at the end.
+
+---
+
+## Fixes & Improvements
+
+- **Package installation** now shows a progress bar with percentage instead of just a spinner
+- **AI chat** replies are displayed in a clean bordered card layout, making code blocks easier to read
+- **AI system prompt** improved — the assistant now understands your project context, follows Python best practices, and creates files directly instead of just showing code in chat
+- **Gemini AI** now automatically detects which models are available on your account — no more "model not found" errors
+- **Script crash → AI analysis** — when a script exits with an error, Pyro offers to send the traceback to your AI assistant for an instant explanation and fix suggestion
+- **Project Builder back button** fixed
+- **Global Import Analyser** promoted to its own main menu entry
+- Various stability improvements and minor fixes
+
+---
+
+## Getting Started
+
+If this is your first time using Pyro:
+
+1. Download `Pyro.exe` from the [Releases page](https://github.com/AbdeTheDev/Pyro/releases)
+2. Run it — Pyro will detect your installed Python versions automatically
+3. Select your Python interpreter and you're ready
+
+All features work from the arrow-key menu. Type a number to jump directly to any item.
+
+---
+
+## Feedback & Bug Reports
+
+Found a bug? Open **Main Menu → Bug Report** and Pyro will prepare a report you can submit directly to GitHub Issues in one click.
+
+- GitHub: [github.com/AbdeTheDev/Pyro](https://github.com/AbdeTheDev/Pyro)
+- YouTube: [youtube.com/@pyro-k4n](https://www.youtube.com/@pyro-k4n)
+
+---
+
+*Thank you for using Pyro. More features coming soon. 🔥*
+ 
+  
+</details>
+
 ## 🔒 Security & Privacy
 
 - **No telemetry.** Pyro never sends data anywhere unless you explicitly use the Bug Report feature.
